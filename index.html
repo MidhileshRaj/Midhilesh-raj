@@ -1,28 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Midhilesh Raj &mdash; Software Developer</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-    <meta name="description" content="">
-    <meta name="keywords" content="html, css, javascript, jquery">
-    <meta name="author" content="">
+    <meta name="description" content="" />
+    <meta name="keywords" content="html, css, javascript, jquery" />
+    <meta name="author" content="" />
 
-    <link rel="stylesheet" href="css/vendor/icomoon/style.css">
-    <link rel="stylesheet" href="css/vendor/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/vendor/animate.min.css">
-    <link rel="stylesheet" href="css/vendor/aos.css">
-    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="css/vendor/jquery.fancybox.min.css">
-    
+    <link rel="stylesheet" href="css/vendor/icomoon/style.css" />
+    <link rel="stylesheet" href="css/vendor/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/vendor/animate.min.css" />
+    <link rel="stylesheet" href="css/vendor/aos.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/vendor/jquery.fancybox.min.css" />
 
     <!-- Theme Style -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js"></script>
 
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js"></script>
   </head>
   <body data-spy="scroll" data-target=".site-nav-target" data-offset="200">
-
     <nav class="unslate_co--site-mobile-menu">
       <div class="close-wrap d-flex">
         <a href="#" class="d-flex ml-auto js-menu-toggle">
@@ -36,119 +40,165 @@
       <div class="site-mobile-inner"></div>
     </nav>
 
-
     <div class="unslate_co--site-wrap">
-
       <div class="unslate_co--site-inner">
-
         <div class="lines-wrap">
           <div class="lines-inner">
             <div class="lines"></div>
           </div>
         </div>
         <!-- END lines -->
-      
-      <nav class="unslate_co--site-nav site-nav-target">
 
-        <div class="container">
-        
-          <div class="row align-items-center justify-content-between text-left">
-            <div class="col-md-5 text-right">
-              <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
-                <li class="has-children">
-                  <a href="#home-section" class="nav-link">Home</a>
-                </li>
-                <li><a href="#about-section" class="nav-link">About</a></li>
-                <li><a href="#portfolio-section" class="nav-link">Projects</a></li>
-                <li><a href="#services-section" class="nav-link">Services</a></li>
-              </ul>
-            </div>
-            <div class="site-logo pos-absolute">
-              <a href="index.html" class="unslate_co--site-logo" style="color: #ffeb12;"> Portfolio <span>.</span></a>
-            </div>
-            <div class="col-md-5 text-right text-lg-left">
-              <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
-                <li><a href="#skills-section" class="nav-link">Skills</a></li>
-                <li><a href="#testimonial-section" class="nav-link">Experience</a></li>
-                <li><a href="#community-section" class="nav-link">Community</a></li>
-                <li><a href="#contact-section" class="nav-link">Contact</a></li>
-              </ul>
+        <nav class="unslate_co--site-nav site-nav-target">
+          <div class="container">
+            <div
+              class="row align-items-center justify-content-between text-left"
+            >
+              <div class="col-md-5 text-right">
+                <ul
+                  class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block"
+                >
+                  <li class="has-children">
+                    <a href="#home-section" class="nav-link">Home</a>
+                  </li>
+                  <li><a href="#about-section" class="nav-link">About</a></li>
+                  <li>
+                    <a href="#portfolio-section" class="nav-link">Projects</a>
+                  </li>
+                  <li>
+                    <a href="#services-section" class="nav-link">Services</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="site-logo pos-absolute">
+                <a
+                  href="index.html"
+                  class="unslate_co--site-logo"
+                  style="color: #ffeb12"
+                >
+                  Portfolio <span>.</span></a
+                >
+              </div>
+              <div class="col-md-5 text-right text-lg-left">
+                <ul
+                  class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block"
+                >
+                  <li><a href="#skills-section" class="nav-link">Skills</a></li>
+                  <li>
+                    <a href="#testimonial-section" class="nav-link"
+                      >Experience</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#community-section" class="nav-link">Community</a>
+                  </li>
+                  <li>
+                    <a href="#contact-section" class="nav-link">Contact</a>
+                  </li>
+                </ul>
 
-              <ul class="site-nav-ul-none-onepage text-right d-inline-block d-lg-none">
-                <li><a href="#" class="js-menu-toggle">Menu</a></li>
-              </ul>
-
+                <ul
+                  class="site-nav-ul-none-onepage text-right d-inline-block d-lg-none"
+                >
+                  <li><a href="#" class="js-menu-toggle">Menu</a></li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
+        </nav>
+        <!-- END nav -->
 
-      </nav>
-      <!-- END nav -->
-
-      <div class="cover-v1 jarallax" style="background-image: url('images/cover_bg_2.jpg');" id="home-section">
-        <div class="container">
-          <div class="row align-items-center">
-              
-            <div class="col-md-7 mx-auto text-center">
-              <h1 class="heading gsap-reveal-hero">Midhilesh Raj</h1>
-              <h2 class="subheading gsap-reveal-hero">I’m a Software Developer , specialised in <span style=" color: #ffeb12;">Flutter</span>, located kerala</h2>
+        <div
+          class="cover-v1 jarallax"
+          style="background-image: url('images/cover_bg_2.jpg')"
+          id="home-section"
+        >
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-7 mx-auto text-center">
+                <h1 class="heading gsap-reveal-hero">Midhilesh Raj</h1>
+                <h2 class="subheading gsap-reveal-hero">
+                  I’m a Software Developer , specialised in
+                  <span style="color: #ffeb12">Flutter</span>, located kerala
+                </h2>
+              </div>
             </div>
-
           </div>
-        </div>
 
-
-        <a href="#about-section" class="mouse-wrap smoothscroll">
-          <span class="mouse">
-            <span class="scroll"></span>
-          </span>
-          <span class="mouse-label">Scroll</span>
-        </a>
-
-      </div>
-      <!-- END .cover-v1 -->
-
-      <div class="unslate_co--section" id="about-section">
-        <div class="container">
-          
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">About Me</span></h2>
-            <span class="gsap-reveal">
-            <img src="images/divider.png" alt="divider" width="76">
+          <a href="#about-section" class="mouse-wrap smoothscroll">
+            <span class="mouse">
+              <span class="scroll"></span>
             </span>
-          </div>
-          
+            <span class="mouse-label">Scroll</span>
+          </a>
+        </div>
+        <!-- END .cover-v1 -->
 
-          <div class="row mt-5 justify-content-between">
-            <div class="col-lg-7 mb-5 mb-lg-0">
-              <figure class="dotted-bg gsap-reveal-img ">
-                <img src="images/about_me_pic2.jpg" alt="Image" class="img-fluid">
-              </figure>
+        <div class="unslate_co--section" id="about-section">
+          <div class="container">
+            <div class="section-heading-wrap text-center mb-5">
+              <h2 class="heading-h2 text-center divider">
+                <span class="gsap-reveal">About Me</span>
+              </h2>
+              <span class="gsap-reveal">
+                <img src="images/divider.png" alt="divider" width="76" />
+              </span>
             </div>
-            <div class="col-lg-4 pr-lg-5">
-              <h3 class="mb-4 heading-h3"><span class="gsap-reveal">We can make it together</span></h3>
-              <p class="lead gsap-reveal">Passionate about coding 🧑‍💻, ECE background <a href="#" style="color: #ffeb12;">IT professional</a> here. </p>
-              <p class="mb-4 gsap-reveal">I’m a tech-enthusiast & have a wide variety of knowledge in programming and computer.💻 have experience in such verity of coding skills include Flutter and python</p>
-              <p class="gsap-reveal"><a href="#" class="btn btn-outline-pill btn-custom-light" style="color: #ffeb12;">Download my CV</a></p>
+
+            <div class="row mt-5 justify-content-between">
+              <div class="col-lg-7 mb-5 mb-lg-0">
+                <figure class="dotted-bg gsap-reveal-img">
+                  <img
+                    src="images/about_me_pic2.jpg"
+                    alt="Image"
+                    class="img-fluid"
+                  />
+                </figure>
+              </div>
+              <div class="col-lg-4 pr-lg-5">
+                <h3 class="mb-4 heading-h3">
+                  <span class="gsap-reveal">We can make it together</span>
+                </h3>
+                <p class="lead gsap-reveal">
+                  Passionate about coding 🧑‍💻, ECE background
+                  <a href="#" style="color: #ffeb12">IT professional</a> here.
+                </p>
+                <p class="mb-4 gsap-reveal">
+                  I’m a tech-enthusiast & have a wide variety of knowledge in
+                  programming and computer.💻 have experience in such verity of
+                  coding skills include Flutter and python
+                </p>
+                <p class="gsap-reveal">
+                  <a
+                    href="#"
+                    class="btn btn-outline-pill btn-custom-light"
+                    style="color: #ffeb12"
+                    >Download my CV</a
+                  >
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
+        <div class="unslate_co--section" id="portfolio-section">
+          <div class="container">
+            <div class="relative">
+              <div class="loader-portfolio-wrap">
+                <div class="loader-portfolio"></div>
+              </div>
+            </div>
+            <div id="portfolio-single-holder"></div>
 
-      <div class="unslate_co--section" id="portfolio-section">
-        <div class="container">
-          
-          
-          <div class="relative"><div class="loader-portfolio-wrap"><div class="loader-portfolio"></div></div> </div>
-          <div id="portfolio-single-holder"></div>
+            <div class="portfolio-wrapper">
+              <div
+                class="d-flex align-items-center mb-4 gsap-reveal gsap-reveal-filter"
+              >
+                <h2 class="mr-auto heading-h2">
+                  <span class="gsap-reveal">Repositories/Projects</span>
+                </h2>
 
-          <div class="portfolio-wrapper">
-
-            <div class="d-flex align-items-center mb-4 gsap-reveal gsap-reveal-filter">
-              <h2 class="mr-auto heading-h2"><span class="gsap-reveal">Repositories/Projects</span></h2>
-
-              <!-- <a href="#" class="text-white js-filter d-inline-block d-lg-none">Filter</a>
+                <!-- <a href="#" class="text-white js-filter d-inline-block d-lg-none">Filter</a>
               
               <div class="filter-wrap">
                 <div class="filter ml-auto" id="filters">
@@ -159,12 +209,10 @@
                   <a href="#" data-filter=".packaging">Packaging</a>
                 </div>
               </div> -->
-            </div>
+              </div>
 
-
-            
-            <div id="posts" class="row gutter-isotope-item">
-              <!-- <div class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
+              <div id="posts" class="row gutter-isotope-item">
+                <!-- <div class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
                 <a href="portfolio-single-1.html" class="portfolio-item ajax-load-page isotope-item gsap-reveal-img" data-id="1">
                     <div class="overlay">
                       <span class="wrap-icon icon-link2"></span>
@@ -176,8 +224,14 @@
                     <img src="images/work_1_md.jpg" class="lazyload  img-fluid" alt="Images" />
                   </a>
               </div> -->
-              <div class="item branding packaging illustration col-sm-6 col-md-6 col-lg-4 isotope-mb-2 ">
-                <a href="https://github.com/MidhileshRaj/music-player-Demo" class="portfolio-item  item-portrait isotope-item gsap-reveal-img" data-id="3">
+                <div
+                  class="item branding packaging illustration col-sm-6 col-md-6 col-lg-4 isotope-mb-2"
+                >
+                  <a
+                    href="https://github.com/MidhileshRaj/music-player-Demo"
+                    class="portfolio-item item-portrait isotope-item gsap-reveal-img"
+                    data-id="3"
+                  >
                     <div class="overlay">
                       <span class="wrap-icon icon-link2"></span>
                       <div class="portfolio-item-content">
@@ -185,10 +239,14 @@
                         <p>Model, Entertainment</p>
                       </div>
                     </div>
-                    <img src="images/work_2_md.jpg" class="lazyload  img-fluid" alt="Images" />
+                    <img
+                      src="images/work_2_md.jpg"
+                      class="lazyload img-fluid"
+                      alt="Images"
+                    />
                   </a>
-              </div>
-              <!-- <div class="item branding packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
+                </div>
+                <!-- <div class="item branding packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
                 <a href="portfolio-single-4.html" class="portfolio-item isotope-item gsap-reveal-img ajax-load-page" data-id="4">
                     <div class="overlay">
                       <span class="wrap-icon icon-link2"></span>
@@ -200,8 +258,15 @@
                     <img src="images/work_3_md.jpg" class="lazyload  img-fluid" alt="Images" />
                   </a>
               </div> -->
-              <div class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
-                <a href="https://github.com/MidhileshRaj/Reliefe-centre-management" class="portfolio-item isotope-item gsap-reveal-img" data-fancybox="gallery" data-caption="Care Hand">
+                <div
+                  class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2"
+                >
+                  <a
+                    href="https://github.com/MidhileshRaj/Reliefe-centre-management"
+                    class="portfolio-item isotope-item gsap-reveal-img"
+                    data-fancybox="gallery"
+                    data-caption="Care Hand"
+                  >
                     <div class="overlay">
                       <span class="wrap-icon icon-play_circle_filled"></span>
                       <div class="portfolio-item-content">
@@ -209,16 +274,22 @@
                         <p>web, Reliefe Centre Management</p>
                       </div>
                     </div>
-                    <img src="images/work_8_md.jpg" class="lazyload  img-fluid" alt="Images" />
+                    <img
+                      src="images/work_8_md.jpg"
+                      class="lazyload img-fluid"
+                      alt="Images"
+                    />
                   </a>
-              </div>
+                </div>
 
-              
-
-              
-
-              <div class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
-                <a href="https://github.com/MidhileshRaj/TicTacToe-Game" class="portfolio-item  item-portrait isotope-item gsap-reveal-img" data-id="2">
+                <div
+                  class="item web branding col-sm-6 col-md-6 col-lg-4 isotope-mb-2"
+                >
+                  <a
+                    href="https://github.com/MidhileshRaj/TicTacToe-Game"
+                    class="portfolio-item item-portrait isotope-item gsap-reveal-img"
+                    data-id="2"
+                  >
                     <div class="overlay">
                       <span class="wrap-icon icon-link2"></span>
                       <div class="portfolio-item-content">
@@ -226,12 +297,22 @@
                         <p>2d Game, fun</p>
                       </div>
                     </div>
-                    <img src="images/work_6_md.jpg" class="lazyload  img-fluid" alt="Images" />
+                    <img
+                      src="images/work_6_md.jpg"
+                      class="lazyload img-fluid"
+                      alt="Images"
+                    />
                   </a>
-              </div>
+                </div>
 
-              <div class="item web packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2" >
-                <a href="https://github.com/MidhileshRaj/Midhilesh-Raj-web" class="portfolio-item isotope-item gsap-reveal-img"  data-caption="Web app">
+                <div
+                  class="item web packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2"
+                >
+                  <a
+                    href="https://github.com/MidhileshRaj/Midhilesh-Raj-web"
+                    class="portfolio-item isotope-item gsap-reveal-img"
+                    data-caption="Web app"
+                  >
                     <div class="overlay">
                       <span class="wrap-icon icon-link2"></span>
                       <div class="portfolio-item-content">
@@ -239,12 +320,23 @@
                         <p>web, Animated</p>
                       </div>
                     </div>
-                    <img src="images/work_4_full.jpg" class="lazyload  img-fluid" alt="Images" height="100" />
+                    <img
+                      src="images/work_4_full.jpg"
+                      class="lazyload img-fluid"
+                      alt="Images"
+                      height="100"
+                    />
                   </a>
-              </div>
+                </div>
 
-              <div class="item branding packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2">
-                <a href="https://github.com/MidhileshRaj/weather-app" class="portfolio-item item-portrait isotope-item gsap-reveal-img "  data-caption="Weather App">
+                <div
+                  class="item branding packaging col-sm-6 col-md-6 col-lg-4 isotope-mb-2"
+                >
+                  <a
+                    href="https://github.com/MidhileshRaj/weather-app"
+                    class="portfolio-item item-portrait isotope-item gsap-reveal-img"
+                    data-caption="Weather App"
+                  >
                     <div class="overlay">
                       <span class="wrap-icon icon-link2"></span>
                       <div class="portfolio-item-content">
@@ -252,24 +344,21 @@
                         <p>Live weather, themes change</p>
                       </div>
                     </div>
-                    <img src="images/work_7_a_md.jpg" class="lazyload  img-fluid" alt="Images" />
+                    <img
+                      src="images/work_7_a_md.jpg"
+                      class="lazyload img-fluid"
+                      alt="Images"
+                    />
                   </a>
+                </div>
+
+                <!-- </div> -->
               </div>
-
-              
-
-              <!-- </div> -->
-
             </div>
-            
           </div>
-
-
         </div>
-      </div>
 
-
-      <!-- <div class="unslate_co--section">
+        <!-- <div class="unslate_co--section">
         <div class="container">
           <div class="owl-carousel logo-slider">
             <div class="logo-v1 gsap-reveal">
@@ -288,216 +377,345 @@
         </div>
       </div>       -->
 
-      <div class="unslate_co--section" id="services-section">
-        <div class="container">
+        <div class="unslate_co--section" id="services-section">
+          <div class="container">
+            <div class="section-heading-wrap text-center mb-5">
+              <h2 class="heading-h2 text-center divider">
+                <span class="gsap-reveal">My Services</span>
+              </h2>
+              <span class="gsap-reveal"
+                ><img src="images/divider.png" alt="divider" width="76"
+              /></span>
+            </div>
 
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Services</span></h2>
-            <span class="gsap-reveal"><img src="images/divider.png" alt="divider" width="76"></span>
-          </div>
-
-          <div class="row gutter-v3">
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
-                <div class="wrap-icon mb-3">
-                  <img src="images/svg/001-options.svg" alt="Image" width="45">
+            <div class="row gutter-v3">
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
+                  <div class="wrap-icon mb-3">
+                    <img
+                      src="images/svg/001-options.svg"
+                      alt="Image"
+                      width="45"
+                    />
+                  </div>
+                  <h3>
+                    App <br />
+                    Strategy
+                  </h3>
+                  <p>
+                    Developing robust digital strategies with Flutter to elevate
+                    your brand, enhance user experiences. Transform your vision
+                    into reality with seamless, cross-platform solutions.
+                  </p>
                 </div>
-                <h3>App <br> Strategy</h3>
-                <p>Developing robust digital strategies with Flutter to elevate your brand, enhance user experiences. Transform your vision into reality with seamless, cross-platform solutions. </p>
-              </div> 
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
-                <div class="wrap-icon mb-3">
-                  <img src="images/svg/002-chat.svg" alt="Icon" width="45">
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
+                  <div class="wrap-icon mb-3">
+                    <img src="images/svg/002-chat.svg" alt="Icon" width="45" />
+                  </div>
+                  <h3>
+                    Web <br />
+                    Development
+                  </h3>
+                  <p>
+                    Crafting dynamic, responsive websites to elevate your online
+                    presence and drive business growth.
+                  </p>
                 </div>
-                <h3>Web <br> Development</h3>
-                <p>Crafting dynamic, responsive websites to elevate your online presence and drive business growth. </p>
-              </div> 
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
-                <div class="wrap-icon mb-3">
-                  <img src="images/svg/003-contact-book.svg" alt="Image" class="img-fluid" width="45">
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
+                  <div class="wrap-icon mb-3">
+                    <img
+                      src="images/svg/003-contact-book.svg"
+                      alt="Image"
+                      class="img-fluid"
+                      width="45"
+                    />
+                  </div>
+                  <h3>
+                    Android <br />
+                    Applications
+                  </h3>
+                  <p>
+                    Elevating Android app experiences with Flutter's
+                    versatility. Let's create immersive, cross-platform
+                    solutions tailored to your vision
+                  </p>
                 </div>
-                <h3>Android <br> Applications</h3>
-                <p>Elevating Android app experiences with Flutter's versatility. Let's create immersive, cross-platform solutions tailored to your vision</p>
-              </div> 
-            </div>
+              </div>
 
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
-                <div class="wrap-icon mb-3">
-                  <img src="images/svg/004-percentage.svg" alt="Image" width="45">
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="feature-v1" data-aos="fade-up" data-aos-delay="0">
+                  <div class="wrap-icon mb-3">
+                    <img
+                      src="images/svg/004-percentage.svg"
+                      alt="Image"
+                      width="45"
+                    />
+                  </div>
+                  <h3>
+                    Python Project <br />
+                    Development
+                  </h3>
+                  <p>
+                    Creative ideas into reality through Python. Let's
+                    collaborate to develop innovative projects that bring value
+                    and efficiency to your business.
+                  </p>
                 </div>
-                <h3>Python Project <br> Development</h3>
-                <p>Creative ideas into reality through Python. Let's collaborate to develop innovative projects that bring value and efficiency to your business. </p>
-              </div> 
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
-                <div class="wrap-icon mb-3">
-                  <img src="images/svg/006-goal.svg" alt="Image" width="45">
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="feature-v1" data-aos="fade-up" data-aos-delay="100">
+                  <div class="wrap-icon mb-3">
+                    <img src="images/svg/006-goal.svg" alt="Image" width="45" />
+                  </div>
+                  <h3>
+                    iOS <br />
+                    App Development
+                  </h3>
+                  <p>
+                    Revolutionize iOS experiences with Flutter's versatility.
+                    Let's build immersive, cross-platform solutions
+                    implementation
+                  </p>
                 </div>
-                <h3>iOS <br> App Development</h3>
-                <p>Revolutionize iOS experiences with Flutter's versatility. Let's build immersive, cross-platform solutions implementation</p>
-              </div> 
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-              <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
-                <div class="wrap-icon mb-3">
-                  <img src="images/svg/005-line-chart.svg" alt="Image" width="45">
+              </div>
+              <div class="col-md-6 col-lg-4 mb-4">
+                <div class="feature-v1" data-aos="fade-up" data-aos-delay="200">
+                  <div class="wrap-icon mb-3">
+                    <img
+                      src="images/svg/005-line-chart.svg"
+                      alt="Image"
+                      width="45"
+                    />
+                  </div>
+                  <h3>
+                    Embedded <br />
+                    Applications
+                  </h3>
+                  <p>
+                    Empowering devices with Flutter's flexibility. Let's
+                    innovate together to create seamless embedded applications.
+                  </p>
                 </div>
-                <h3>Embedded <br> Applications</h3>
-                <p>Empowering devices with Flutter's flexibility. Let's innovate together to create seamless embedded applications. </p>
-              </div> 
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="unslate_co--section section-counter" id="skills-section">
-        <div class="container">
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Skills</span></h2>
-            <span class="gsap-reveal"><img src="images/divider.png" alt="divider" width="76"></span>
-          </div>
-
-
-          <div class="row pt-5">
-            <div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="93">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">Flutter</span>
               </div>
-            </div>
-            <div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="80">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">Django/Flask</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="90">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">Html/css</span>
-              </div>
-            </div>
-            <div class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-              <div class="counter-v1 text-center">
-                <span class="number-wrap">
-                  <span class="number number-counter" data-number="100">0</span>
-                  <span class="append-text">%</span>
-                </span>
-                <span class="counter-label">U i</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- END .counter -->
-
-      <div class="unslate_co--section" id="testimonial-section">
-        <div class="container">
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">My Work Experience</span></h2>
-            <span class="gsap-reveal"><img src="images/divider.png" alt="divider" width="76"></span>
-          </div>
-        </div>
-
-        <div class="owl-carousel testimonial-slider" data-aos="fade-up">
-          <div>
-            <div class="testimonial-v1">
-              <div class="testimonial-inner-bg">
-                <span class="quote">••••</span>
-                <blockquote>
-                  As a mobile and web app developer, I've excelled in creating Dart APIs using the Shelf package and harnessing Firebase for authentication and data storage. Recognized as the best performer of the month, I've also mentored interns, advocated for best practices, and developed Flutter applications with efficient state management using GetX and Provider.
-                </blockquote>
-              </div>
-              
-              <div class="testimonial-author-info">
-                <img src="images/futura_logo_1.jpg" alt="Image">
-                <h3>Futura Labs</h3>
-                <span class="d-block position">June 2023 - Currently working <br> @Kozhikode </span>
-              </div>
-
-            </div>
-          </div>
-          <div>
-            <div class="testimonial-v1">
-              <div class="testimonial-inner-bg">
-                <span class="quote">••••</span>
-                <blockquote>
-                  With a versatile skill set encompassing Python and Flutter development, I've not only contributed to diverse projects but also mentored numerous interns and junior colleagues. Additionally, I've played a pivotal role in developing various private academic projects, utilizing my expertise in Flutter and Python to drive innovation and success.
-                </blockquote>
-              </div>
-              
-              <div class="testimonial-author-info">
-                <img src="images/rizz_logo_1.jpg" alt="Image">
-                <h3>Rizz Technologies</h3>
-                <span class="d-block position">May 2022 - June 2023  <br> @Kozhikode</span>
-              </div>
-
-            </div>
-          </div>
-          <div>
-            <div class="testimonial-v1">
-              <div class="testimonial-inner-bg">
-                <span class="quote">••••</span>
-                <blockquote>
-                  During my internship from Trylogic, I underwent comprehensive training in website development and independently executed several small-scale projects. Immersed in the dynamic environment of an IT company, I gained invaluable experience and honed my skills across various programming languages, including PHP and Python.
-                </blockquote>
-              </div>
-              
-              <div class="testimonial-author-info">
-                <img src="images/trylogic_logo_2.jpg" alt="Image">
-                <h3>Trylogic Softsolution</h3>
-                <span class="d-block position">January 2022 - May 2022 <br> @Thiruvananthapuram</span>
-              </div>
-
             </div>
           </div>
         </div>
 
-      </div>
-      <!-- END testimonial -->
+        <div class="unslate_co--section section-counter" id="skills-section">
+          <div class="container">
+            <div class="section-heading-wrap text-center mb-5">
+              <h2 class="heading-h2 text-center divider">
+                <span class="gsap-reveal">My Skills</span>
+              </h2>
+              <span class="gsap-reveal"
+                ><img src="images/divider.png" alt="divider" width="76"
+              /></span>
+            </div>
 
-
-      <div class="unslate_co--section" id="community-section">
-        <div class="container">
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Community</span></h2>
-            <span class="gsap-reveal"><img src="images/divider.png" alt="divider" width="76"></span>
-          </div>
-          <div class="owl-carousel logo-slider">
-            <div class="logo-v1 gsap-reveal">
-              <img src="images/GDC.png" alt="Image" class="img-fluid logo-img">
-            </div>
-            <div class="logo-v1 gsap-reveal">
-              <img src="images/overflow.png" alt="Image" class="img-fluid logo-img">
-            </div>
-            <div class="logo-v1 gsap-reveal">
-              <img src="images/medium.png" alt="Image" class="img-fluid logo-img">
-            </div>
-            <div class="logo-v1 gsap-reveal">
-              <img src="images/git.png" alt="Image" class="img-fluid logo-img">
+            <div class="row pt-5">
+              <div
+                class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3"
+                data-aos="fade-up"
+                data-aos-delay="0"
+              >
+                <div class="counter-v1 text-center">
+                  <span class="number-wrap">
+                    <span class="number number-counter" data-number="93"
+                      >0</span
+                    >
+                    <span class="append-text">%</span>
+                  </span>
+                  <span class="counter-label">Flutter</span>
+                </div>
+              </div>
+              <div
+                class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="counter-v1 text-center">
+                  <span class="number-wrap">
+                    <span class="number number-counter" data-number="80"
+                      >0</span
+                    >
+                    <span class="append-text">%</span>
+                  </span>
+                  <span class="counter-label">Django/Flask</span>
+                </div>
+              </div>
+              <div
+                class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="counter-v1 text-center">
+                  <span class="number-wrap">
+                    <span class="number number-counter" data-number="90"
+                      >0</span
+                    >
+                    <span class="append-text">%</span>
+                  </span>
+                  <span class="counter-label">Html/css</span>
+                </div>
+              </div>
+              <div
+                class="col-6 col-sm-6 mb-5 mb-lg-0 col-md-6 col-lg-3"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <div class="counter-v1 text-center">
+                  <span class="number-wrap">
+                    <span class="number number-counter" data-number="100"
+                      >0</span
+                    >
+                    <span class="append-text">%</span>
+                  </span>
+                  <span class="counter-label">U i</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-         
+        <!-- END .counter -->
 
-      <!-- <div class="unslate_co--section" id="journal-section">
+        <div class="unslate_co--section" id="testimonial-section">
+          <div class="container">
+            <div class="section-heading-wrap text-center mb-5">
+              <h2 class="heading-h2 text-center divider">
+                <span class="gsap-reveal">My Work Experience</span>
+              </h2>
+              <span class="gsap-reveal"
+                ><img src="images/divider.png" alt="divider" width="76"
+              /></span>
+            </div>
+          </div>
+
+          <div class="owl-carousel testimonial-slider" data-aos="fade-up">
+            <div>
+              <div class="testimonial-v1">
+                <div class="testimonial-inner-bg">
+                  <span class="quote">••••</span>
+                  <blockquote>
+                    As a mobile and web app developer, I've excelled in creating
+                    Dart APIs using the Shelf package and harnessing Firebase
+                    for authentication and data storage. Recognized as the best
+                    performer of the month, I've also mentored interns,
+                    advocated for best practices, and developed Flutter
+                    applications with efficient state management using GetX and
+                    Provider.
+                  </blockquote>
+                </div>
+
+                <div class="testimonial-author-info">
+                  <img src="images/futura_logo_1.jpg" alt="Image" />
+                  <h3>Futura Labs</h3>
+                  <span class="d-block position"
+                    >June 2023 - Currently working <br />
+                    @Kozhikode
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="testimonial-v1">
+                <div class="testimonial-inner-bg">
+                  <span class="quote">••••</span>
+                  <blockquote>
+                    With a versatile skill set encompassing Python and Flutter
+                    development, I've not only contributed to diverse projects
+                    but also mentored numerous interns and junior colleagues.
+                    Additionally, I've played a pivotal role in developing
+                    various private academic projects, utilizing my expertise in
+                    Flutter and Python to drive innovation and success.
+                  </blockquote>
+                </div>
+
+                <div class="testimonial-author-info">
+                  <img src="images/rizz_logo_1.jpg" alt="Image" />
+                  <h3>Rizz Technologies</h3>
+                  <span class="d-block position"
+                    >May 2022 - June 2023 <br />
+                    @Kozhikode</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="testimonial-v1">
+                <div class="testimonial-inner-bg">
+                  <span class="quote">••••</span>
+                  <blockquote>
+                    During my internship from Trylogic, I underwent
+                    comprehensive training in website development and
+                    independently executed several small-scale projects.
+                    Immersed in the dynamic environment of an IT company, I
+                    gained invaluable experience and honed my skills across
+                    various programming languages, including PHP and Python.
+                  </blockquote>
+                </div>
+
+                <div class="testimonial-author-info">
+                  <img src="images/trylogic_logo_2.jpg" alt="Image" />
+                  <h3>Trylogic Softsolution</h3>
+                  <span class="d-block position"
+                    >January 2022 - May 2022 <br />
+                    @Thiruvananthapuram</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END testimonial -->
+
+        <div class="unslate_co--section" id="community-section">
+          <div class="container">
+            <div class="section-heading-wrap text-center mb-5">
+              <h2 class="heading-h2 text-center divider">
+                <span class="gsap-reveal">Community</span>
+              </h2>
+              <span class="gsap-reveal"
+                ><img src="images/divider.png" alt="divider" width="76"
+              /></span>
+            </div>
+            <div class="owl-carousel logo-slider">
+              <div class="logo-v1 gsap-reveal">
+                <img
+                  src="images/GDC.png"
+                  alt="Image"
+                  class="img-fluid logo-img"
+                />
+              </div>
+              <div class="logo-v1 gsap-reveal">
+                <img
+                  src="images/overflow.png"
+                  alt="Image"
+                  class="img-fluid logo-img"
+                />
+              </div>
+              <div class="logo-v1 gsap-reveal">
+                <img
+                  src="images/medium.png"
+                  alt="Image"
+                  class="img-fluid logo-img"
+                />
+              </div>
+              <div class="logo-v1 gsap-reveal">
+                <img
+                  src="images/git.png"
+                  alt="Image"
+                  class="img-fluid logo-img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="unslate_co--section" id="journal-section">
         <div class="container">
           <div class="section-heading-wrap text-center mb-5">
             <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Social</span></h2>
@@ -508,79 +726,111 @@
         </div>
       </div> -->
 
+        <!-- END blog posts -->
 
-      <!-- END blog posts -->
+        <div class="unslate_co--section" id="contact-section">
+          <div class="container">
+            <div class="section-heading-wrap text-center mb-5">
+              <h2 class="heading-h2 text-center divider">
+                <span class="gsap-reveal">Get In Touch</span>
+              </h2>
+              <span class="gsap-reveal"
+                ><img src="images/divider.png" alt="divider" width="76"
+              /></span>
+            </div>
 
-
-      <div class="unslate_co--section" id="contact-section">
-        <div class="container">
-          <div class="section-heading-wrap text-center mb-5">
-            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">Get In Touch</span></h2>
-            <span class="gsap-reveal"><img src="images/divider.png" alt="divider" width="76"></span>
-          </div>
-
-
-          <div class="row justify-content-between">
-            
-            <div class="col-md-6">
-              <form method="post" class="form-outline-style-v1" id="contactForm">
-                <div class="form-group row mb-0">
-
-                  <div class="col-lg-6 form-group gsap-reveal">
-                    <label for="name">Name</label>
-                    <input name="name" type="text" class="form-control" id="name">
+            <div class="row justify-content-between">
+              <div class="col-md-6">
+                <form
+                  method="post"
+                  class="form-outline-style-v1"
+                  id="contactForm"
+                >
+                  <div class="form-group row mb-0">
+                    <div class="col-lg-6 form-group gsap-reveal">
+                      <label for="name">Name</label>
+                      <input
+                        name="fname"
+                        type="text"
+                        class="form-control"
+                        id="fname"
+                      />
+                    </div>
+                    <div class="col-lg-6 form-group gsap-reveal">
+                      <label for="email">Email</label>
+                      <input
+                        name="email"
+                        type="email"
+                        class="form-control"
+                        id="email"
+                      />
+                    </div>
+                    <div class="col-lg-12 form-group gsap-reveal">
+                      <label for="message">Write your message...</label>
+                      <textarea
+                        name="message"
+                        id="message"
+                        cols="30"
+                        rows="7"
+                        class="form-control"
+                      ></textarea>
+                    </div>
                   </div>
-                  <div class="col-lg-6 form-group gsap-reveal">
-                    <label for="email">Email</label>
-                    <input name="email" type="email" class="form-control" id="email">
-                  </div>
-                  <div class="col-lg-12 form-group gsap-reveal">
-                    <label for="message">Write your message...</label>
-                    <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
-                  </div>
-                </div>
-                <div class="form-group row gsap-reveal">
+                  <div class="form-group row gsap-reveal">
                     <div class="col-md-12 d-flex align-items-center">
-                      <input type="submit" class="btn btn-outline-pill btn-custom-light mr-3" style="color: #ffeb12;" value="Send Message">
+                      <input
+                        type="submit"
+                        class="btn btn-outline-pill btn-custom-light mr-3"
+                        style="color: #ffeb12"
+                        value="Send Message"
+                      />
                       <span class="submitting"></span>
                     </div>
                   </div>
-              </form>
-              <div id="form-message-warning" class="mt-4"></div> 
-              <div id="form-message-success">
-                Your message was sent, thank you!
-              </div>
-
-            </div>
-
-            <div class="col-md-4">
-              <div class="contact-info-v1">
-                <div class="gsap-reveal d-block">
-                  <span class="d-block contact-info-label">Email</span>
-                  <a href="#" class="contact-info-val">midhileshraj01@gmail.com</a>
-                </div>
-                <div class="gsap-reveal d-block">
-                  <span class="d-block contact-info-label">Phone</span>
-                  <a href="#" class="contact-info-val">+91 884 8664147</a>
-                </div>
-                <div class="gsap-reveal d-block">
-                  <span class="d-block contact-info-label">Address</span>
-                  <address class="contact-info-val">Kannur <br> Kerala, India</address>
+                </form>
+                <div id="form-message-warning" class="mt-4"></div>
+                <div id="form-message-success">
+                  Your message was sent, thank you!
                 </div>
               </div>
-            </div>
 
+              <div class="col-md-4">
+                <div class="contact-info-v1">
+                  <div class="gsap-reveal d-block">
+                    <span class="d-block contact-info-label">Email</span>
+                    <a href="#" class="contact-info-val"
+                      >midhileshraj01@gmail.com</a
+                    >
+                  </div>
+                  <div class="gsap-reveal d-block">
+                    <span class="d-block contact-info-label">Phone</span>
+                    <a href="#" class="contact-info-val">+91 884 8664147</a>
+                  </div>
+                  <div class="gsap-reveal d-block">
+                    <span class="d-block contact-info-label">Address</span>
+                    <address class="contact-info-val">
+                      Kannur <br />
+                      Kerala, India
+                    </address>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      </div> <!-- END .unslate_co-site-inner -->
+      <!-- END .unslate_co-site-inner -->
 
       <footer class="unslate_co--footer unslate_co--section">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-md-7">
-              
-              <div class="footer-site-logo"><a href="#">Midhilesh <span style="color: #ffeb12;">Raj</span><span>.</span></a></div>
+              <div class="footer-site-logo">
+                <a href="#"
+                  >Midhilesh <span style="color: #ffeb12">Raj</span
+                  ><span>.</span></a
+                >
+              </div>
 
               <ul class="footer-site-social">
                 <li><a href="">Facebook</a></li>
@@ -589,40 +839,12 @@
                 <li><a href="">Dribbble</a></li>
                 <li><a href="">Behance</a></li>
               </ul>
-
-            
             </div>
           </div>
         </div>
       </footer>
-
-      
     </div>
     <script src="js/scripts-dist.js"></script>
     <script src="js/main.js"></script>
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-    
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyDv2NNLC3WfUhr0QkLqTHCS7WWx--ANhBg",
-        authDomain: "web-portfolio-e2835.firebaseapp.com",
-        projectId: "web-portfolio-e2835",
-        storageBucket: "web-portfolio-e2835.appspot.com",
-        messagingSenderId: "330466957562",
-        appId: "1:330466957562:web:d48f3fe187735361259143",
-        measurementId: "G-16KLF6FJYQ"
-      };
-    
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-    </script>
-
   </body>
 </html>
