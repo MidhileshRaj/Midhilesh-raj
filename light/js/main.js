@@ -536,63 +536,56 @@ var contactForm = function() {
 	if ($('#contactForm').length > 0 ) {
 		$( "#contactForm" ).validate( {
 			rules: {
-				name: "required",
-				email: {
+				fname: "required",
+				emailId: {
 					required: true,
 					email: true
 				},
-				message: {
+				messageContent: {
 					required: true,
 					minlength: 5
 				}
 			},
 			messages: {
-				name: "Please enter your name",
-				email: "Please enter a valid email address",
-				message: "Please enter a message"
+				fname: "Please enter your name",
+				emailId: "Please enter a valid email address",
+				messageContent: "Please enter a message"
 			},
 			errorElement: 'span',
 			errorLabelContainer: '.form-error',
-			/* submit via ajax */
 			submitHandler: function(form) {		
 				var $submit = $('.submitting'),
 					waitText = 'Submitting...';
 
-				$.ajax({   	
-			      type: "POST",
-			      url: "php/send-email.php",
-			      data: $(form).serialize(),
+				$submit.css('display', 'block').text(waitText);
 
-			      beforeSend: function() { 
-			      	$submit.css('display', 'block').text(waitText);
-			      },
-			      success: function(msg) {
-	               if (msg == 'OK') {
-	               	$('#form-message-warning').hide();
-			            setTimeout(function(){
-	               		$('#contactForm').fadeOut();
-	               	}, 1000);
-			            setTimeout(function(){
-			               $('#form-message-success').fadeIn();   
-	               	}, 1400);
-		               
-		            } else {
-		               $('#form-message-warning').html(msg);
-			            $('#form-message-warning').fadeIn();
-			            $submit.css('display', 'none');
-		            }
-			      },
-			      error: function() {
-			      	$('#form-message-warning').html("Something went wrong. Please try again.");
-			         $('#form-message-warning').fadeIn();
-			         $submit.css('display', 'none');
-			      }
-		      });    		
-	  		}
+				var formData = $(form).serializeArray().reduce(function(obj, item) {
+				    obj[item.name] = item.value;
+				    return obj;
+				}, {});
+
+				firebase.database().ref('/enquiries').push(formData)
+				.then((snapshot) => {
+					$('#form-message-warning').hide();
+		            setTimeout(function(){
+		                $('#contactForm').fadeOut();
+		            }, 1000);
+		            setTimeout(function(){
+		               $('#form-message-success').fadeIn();   
+		            }, 1400);
+		            $submit.css('display', 'none');
+				})
+				.catch((error) => {
+					$('#form-message-warning').html("Something went wrong. Please try again.");
+		            $('#form-message-warning').fadeIn();
+		            $submit.css('display', 'none');
+				});
+			}
 			
 		} );
 	}
 };
+
 
 var stickyFillPlugin = function() {
 	var elements = document.querySelectorAll('.unslate_co--sticky');

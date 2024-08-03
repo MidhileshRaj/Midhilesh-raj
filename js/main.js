@@ -25,6 +25,23 @@ jQuery(function($) {
 
 });
 
+const firebaseConfig = {
+	apiKey: "AIzaSyDv2NNLC3WfUhr0QkLqTHCS7WWx--ANhBg",
+	authDomain: "web-portfolio-e2835.firebaseapp.com",
+	databaseURL: "https://web-portfolio-e2835-default-rtdb.firebaseio.com",
+	projectId: "web-portfolio-e2835",
+	storageBucket: "web-portfolio-e2835.appspot.com",
+	messagingSenderId: "330466957562",
+	appId: "1:330466957562:web:d48f3fe187735361259143",
+	measurementId: "G-16KLF6FJYQ"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Reference for DB
+var contactFormDbRef = firebase.database().ref('ContactForm');
+
 var siteIstotope = function() {
 	var $container = $('#posts').isotope({
     itemSelector : '.item',
@@ -532,66 +549,73 @@ var jarallaxPlugin = function() {
 	});
 };
 
+
 var contactForm = function() {
 	if ($('#contactForm').length > 0 ) {
-		$( "#contactForm" ).validate( {
-			rules: {
-				name: "required",
-				email: {
-					required: true,
-					email: true
-				},
-				message: {
-					required: true,
-					minlength: 5
-				}
-			},
-			messages: {
-				name: "Please enter your name",
-				email: "Please enter a valid email address",
-				message: "Please enter a message"
-			},
-			errorElement: 'span',
-			errorLabelContainer: '.form-error',
-			/* submit via ajax */
-			submitHandler: function(form) {		
-				var $submit = $('.submitting'),
-					waitText = 'Submitting...';
+        $( "#contactForm" ).validate( {
+            rules: {
+                fname: "required",
+                phone: "required",
+                emailId: {
+                    required: true,
+                    email: true
+                },
+                messageContent: {
+                    required: true,
+                    minlength: 5
+                }
+            },
+            messages: {
+                fname: "Please enter your name",
+                phone: "Please enter mobile number",
+                emailId: "Please enter a valid email address",
+                messageContent: "Please enter a message"
+            },
+            errorElement: 'span',
+            errorClass: 'error-message', // Custom CSS class for error messages
+            highlight: function (element) {
+                $(element).closest('.form-group').addClass('has-error');
+                $('.form-error').css('color', 'orange');
+            },
+            unhighlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-error');
+                $('.form-error').css('color', '');
+            },
+            submitHandler: function(form) {        
+                var $submit = $('.submitting'),
+                    waitText = 'Submitting...',
+                    fname = $('#fname').val(),
+                    phone = $('#phone').val(),
+                    emailId = $('#emailId').val(),
+                    messageContent = $('#messageContent').val();
 
-				$.ajax({   	
-			      type: "POST",
-			      url: "php/send-email.php",
-			      data: $(form).serialize(),
-
-			      beforeSend: function() { 
-			      	$submit.css('display', 'block').text(waitText);
-			      },
-			      success: function(msg) {
-	               if (msg == 'OK') {
-	               	$('#form-message-warning').hide();
-			            setTimeout(function(){
-	               		$('#contactForm').fadeOut();
-	               	}, 1000);
-			            setTimeout(function(){
-			               $('#form-message-success').fadeIn();   
-	               	}, 1400);
-		               
-		            } else {
-		               $('#form-message-warning').html(msg);
-			            $('#form-message-warning').fadeIn();
-			            $submit.css('display', 'none');
-		            }
-			      },
-			      error: function() {
-			      	$('#form-message-warning').html("Something went wrong. Please try again.");
-			         $('#form-message-warning').fadeIn();
-			         $submit.css('display', 'none');
-			      }
-		      });    		
-	  		}
-			
-		} );
-	}
+                $submit.css('display', 'block').text(waitText); // Ensure submitting text is shown
+            
+                // Save messages using Firebase
+                var newContactForm = contactFormDbRef.push();
+                newContactForm.set({
+                    name: fname,
+                    phone: phone,
+                    email: emailId,
+                    message: messageContent,
+                }).then(function() {
+                    // Success
+                    $('#form-message-warning').hide();
+                    setTimeout(function(){
+                        $('#contactForm').fadeOut();
+                    }, 1000);
+                    setTimeout(function(){
+                       $('#form-message-success').fadeIn();   
+                    }, 1400);
+                }).catch(function(error) {
+                    // Error handling
+                    $('#form-message-warning').html("Something went wrong. Please try again.");
+                    $('#form-message-warning').fadeIn();
+                    $submit.css('display', 'none');
+                });
+            }
+        } );
+    }
 };
 
 var stickyFillPlugin = function() {
