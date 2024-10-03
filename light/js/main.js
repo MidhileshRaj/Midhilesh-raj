@@ -547,7 +547,7 @@ var contactForm = function() {
 				}
 			},
 			messages: {
-				fname: "Please enter your name",
+				fname: "Please enter your name here",
 				emailId: "Please enter a valid email address",
 				messageContent: "Please enter a message"
 			},

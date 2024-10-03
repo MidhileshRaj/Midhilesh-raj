@@ -579,7 +579,11 @@ var contactForm = function() {
             },
             unhighlight: function (element) {
                 $(element).closest('.form-group').removeClass('has-error');
-                $('.form-error').css('color', '');
+                $('.form-error').css('color', 'orange');
+            },
+			errorPlacement: function(error, element) {
+                error.css('color', 'red'); // Set the error text color to red
+                error.insertAfter(element); // Insert the error message after the input field
             },
             submitHandler: function(form) {        
                 var $submit = $('.submitting'),
