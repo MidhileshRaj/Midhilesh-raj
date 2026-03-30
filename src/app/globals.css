@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-accent-yellow: #ffeb12;
+  --color-accent-cyan: #37e3e6;
+  --color-footer-bg: #191919;
+  --font-raleway: "Raleway", sans-serif;
+  --font-arimo: "Arimo", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+/* Swiper custom styles */
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+.swiper-pagination-bullet-active {
+  background: #ffeb12 !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffeb12;
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background: #ffeb12;
+  color: #000;
+}
+
+/* Form focus outlines */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #ffeb12 !important;
+}
+
+/* Custom cursor — hide default cursor on pointer devices */
+@media (pointer: fine) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
 }
