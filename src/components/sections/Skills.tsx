@@ -11,6 +11,7 @@ const skills = [
   { label: "HTML / CSS", percentage: 90 },
   { label: "UI Design", percentage: 100 },
   { label: "AI Prompting", percentage: 95 },
+  { label: "Operations/Aws server / DBMS", percentage: 60 },
 ];
 
 function SkillBar({

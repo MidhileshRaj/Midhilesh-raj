@@ -7,9 +7,12 @@ import Image from "next/image";
 import { useMouseSpotlight } from "@/hooks/useMouseSpotlight";
 
 const stats = [
-  { value: "3+", label: "Years\nExperience" },
-  { value: "20+", label: "Projects\nCompleted" },
+  { value: "4+", label: "Years\nExperience" },
+  { value: "3+", label: "CI/CD Projects\nCompleted" },
   { value: "3", label: "Companies\nWorked With" },
+  { value: "10+", label: "Freelance\n Works" },
+  { value: "20+", label: "Total\n Projects (including personal)" },
+  { value: "10+", label: "Interns\n Trained" },
 ];
 
 export default function About() {

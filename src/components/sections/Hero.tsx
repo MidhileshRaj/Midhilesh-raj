@@ -118,7 +118,7 @@ export default function Hero() {
               {roles[roleIndex]}
             </motion.span>
           </AnimatePresence>
-          <span className="text-white/40 text-sm font-light">based in Kerala</span>
+          <span className="text-white/40 text-sm font-light">located in Kerala</span>
         </motion.div>
 
         {/* CTA Buttons */}

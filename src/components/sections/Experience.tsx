@@ -9,6 +9,16 @@ import { useMouseSpotlight } from "@/hooks/useMouseSpotlight";
 const experiences = [
   {
     id: 1,
+    company: "Occazone Pvt. Ltd.",
+    role: "Sr. Flutter Developer",
+    logo: "/occazone_img.jpg",
+    period: "October 2025 — Current",
+    location: "Thiruvananthapuram",
+    quote:
+      "Served as a Senior Software Development Engineer, leading a team of 5 developers in building and managing the WhenYou Event App. Directed cross-platform development (iOS and Android), ensuring efficient team collaboration, timely delivery, and high-quality application performance",
+  },
+  {
+    id: 2,
     company: "Futura Labs",
     role: "Mobile & Web Developer",
     logo: "/futura_logo_1.jpg",
@@ -18,7 +28,7 @@ const experiences = [
       "As a mobile and web app developer, I've excelled in creating Dart APIs using the Shelf package and harnessing Firebase for authentication and data storage. Recognised as the best performer of the month, I've also mentored interns, advocated for best practices, and developed Flutter applications with efficient state management using GetX and Provider.",
   },
   {
-    id: 2,
+    id: 3,
     company: "Rizz Technologies",
     role: "Flutter & Python Developer",
     logo: "/rizz_logo_1.jpg",
@@ -26,16 +36,6 @@ const experiences = [
     location: "Kozhikode",
     quote:
       "With a versatile skill set encompassing Python and Flutter development, I've not only contributed to diverse projects but also mentored numerous interns and junior colleagues. Additionally, I've played a pivotal role in developing various private academic projects, utilising my expertise in Flutter and Python to drive innovation and success.",
-  },
-  {
-    id: 3,
-    company: "Trylogic Softsolution",
-    role: "Web Development Intern",
-    logo: "/trylogic_logo_2.jpg",
-    period: "January 2022 — May 2022",
-    location: "Thiruvananthapuram",
-    quote:
-      "During my internship at Trylogic, I underwent comprehensive training in website development and independently executed several small-scale projects. Immersed in the dynamic environment of an IT company, I gained invaluable experience and honed my skills across various programming languages, including PHP and Python.",
   },
 ];
 
