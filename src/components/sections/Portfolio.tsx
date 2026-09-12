@@ -6,6 +6,184 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import { useMouseSpotlight } from "@/hooks/useMouseSpotlight";
 
+type ShippedApp = {
+  id: number;
+  num: string;
+  title: string;
+  client: string;
+  category: string;
+  description: string;
+  tech: string[];
+  icon?: string;
+  links: { label: string; url: string }[];
+};
+
+const shippedApps: ShippedApp[] = [
+  {
+    id: 1,
+    num: "01",
+    title: "Occazone",
+    client: "Occazone Pvt. Ltd.",
+    category: "Event Services Marketplace",
+    description:
+      "Customer app for discovering and booking event services across Kerala — convention centres, party halls, catering, photography, makeover studios and tours & travels — with verified vendors and live booking updates. Led a team of 5 developers shipping it on Android and iOS.",
+    tech: ["Flutter", "Android", "iOS"],
+    icon: "/projects/occazone.png",
+    links: [
+      { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.occazone.whenyou" },
+      { label: "App Store", url: "https://apps.apple.com/in/app/occazone/id6758567677" },
+      { label: "Website", url: "https://www.occazone.com" },
+    ],
+  },
+  {
+    id: 2,
+    num: "02",
+    title: "Occazone Driver",
+    client: "Occazone Pvt. Ltd.",
+    category: "Driver Trip Management",
+    description:
+      "Companion app for drivers assigned by vendors on the Occazone platform. Drivers receive vendor-assigned trips, start and complete rides with secure customer Start/End codes, manage trip status and track their trip history and earnings.",
+    tech: ["Flutter", "Android"],
+    icon: "/projects/occazone-driver.jpg",
+    links: [
+      { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.occazone.driversApp" },
+    ],
+  },
+  {
+    id: 3,
+    num: "03",
+    title: "JoinMeds",
+    client: "JoinMeds",
+    category: "Healthcare Job Platform",
+    description:
+      "India's dedicated healthcare job platform. Doctors, nurses, pharmacists and technicians build role-specific profiles, upload resumes and apply instantly, while hospitals and clinics post openings, review applicants and hire faster.",
+    tech: ["Flutter", "Android", "iOS"],
+    icon: "/projects/joinmeds.png",
+    links: [
+      { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.joinmeds.app" },
+      { label: "App Store", url: "https://apps.apple.com/in/app/joinmeds/id6760744098" },
+      { label: "Website", url: "https://joinmeds.in" },
+    ],
+  },
+  {
+    id: 4,
+    num: "04",
+    title: "Raitha Sahayak",
+    client: "Ecochoice Naturals Pvt. Ltd.",
+    category: "AgriTech · Farmers",
+    description:
+      "Farmer-facing app powered by a trained AI model. Farmers upload photos of their produce and receive AI-generated quality reports, helping them showcase their produce to buyers and sell with confidence.",
+    tech: ["Flutter", "AI", "Android"],
+    icon: "/projects/raitha-sahayak.png",
+    links: [
+      { label: "Google Play", url: "https://play.google.com/store/apps/details?id=in.ecochoice.raithasahayak" },
+    ],
+  },
+  {
+    id: 5,
+    num: "05",
+    title: "Krishi Connect",
+    client: "Ecochoice Naturals Pvt. Ltd.",
+    category: "AgriTech · B2B Buyers",
+    description:
+      "Buyer-side B2B companion to Raitha Sahayak. Connects buyers directly with farmers and gives them AI-verified quality reports on produce for transparent, informed purchasing.",
+    tech: ["Flutter", "AI", "Android"],
+    links: [],
+  },
+];
+
+function AppCard({ app, index }: { app: ShippedApp; index: number }) {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.08 });
+  const initials = app.title
+    .split(" ")
+    .map((w) => w[0])
+    .join("")
+    .slice(0, 2);
+
+  return (
+    <motion.article
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+      className="group relative flex flex-col border border-white/8 bg-white/2 p-6 md:p-7 transition-colors duration-300 hover:border-white/20"
+    >
+      {/* Top accent line */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px opacity-40 group-hover:opacity-100 transition-opacity duration-300"
+        style={{ background: "linear-gradient(90deg, #ffeb12 0%, transparent 60%)" }}
+      />
+
+      {/* Icon + number */}
+      <div className="flex items-start justify-between gap-4 mb-5">
+        <div className="w-14 h-14 relative rounded-xl overflow-hidden bg-white/5 flex-shrink-0">
+          {app.icon ? (
+            <Image
+              src={app.icon}
+              alt={`${app.title} app icon`}
+              fill
+              sizes="56px"
+              className="object-cover"
+            />
+          ) : (
+            <span
+              className="absolute inset-0 flex items-center justify-center text-lg font-extrabold"
+              style={{ backgroundColor: "rgba(255,235,18,0.1)", color: "#ffeb12" }}
+            >
+              {initials}
+            </span>
+          )}
+        </div>
+        <span
+          className="text-[10px] font-extrabold tracking-[0.2em]"
+          style={{ color: "#ffeb12" }}
+        >
+          {app.num}
+        </span>
+      </div>
+
+      <h3 className="text-white text-xl font-bold leading-tight">{app.title}</h3>
+      <p className="text-white/35 text-xs mt-1 tracking-wide">
+        {app.client} · {app.category}
+      </p>
+
+      <p className="text-white/60 font-light text-sm leading-relaxed mt-4 mb-5">
+        {app.description}
+      </p>
+
+      {/* Tech tags */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        {app.tech.map((t) => (
+          <span
+            key={t}
+            className="text-[9px] font-bold tracking-[0.15em] uppercase px-2 py-1 rounded"
+            style={{ backgroundColor: "rgba(255,235,18,0.15)", color: "#ffeb12" }}
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+
+      {/* Store / website links */}
+      {app.links.length > 0 && (
+        <div className="mt-auto flex flex-wrap gap-2 pt-5 border-t border-white/6">
+          {app.links.map((link) => (
+            <a
+              key={link.label}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] font-bold tracking-[0.2em] uppercase px-3 py-2 border border-white/12 text-white/70 hover:text-black hover:bg-[#ffeb12] hover:border-[#ffeb12] transition-colors"
+            >
+              {link.label} ↗
+            </a>
+          ))}
+        </div>
+      )}
+    </motion.article>
+  );
+}
+
 const portfolioItems = [
   {
     id: 1,
@@ -200,22 +378,35 @@ export default function Portfolio() {
           >
             My Work
           </p>
-          <div className="flex items-end justify-between gap-4 flex-wrap">
-            <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-              Repositories / Projects
-            </h2>
-            <a
-              href="https://github.com/MidhileshRaj"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/30 hover:text-white/70 transition-colors flex items-center gap-2"
-            >
-              All on GitHub <span>→</span>
-            </a>
-          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
+            Projects
+          </h2>
         </motion.div>
 
-        {/* Grid */}
+        {/* Shipped apps */}
+        <h3 className="text-[11px] font-bold tracking-[0.3em] uppercase text-white/50 mb-6">
+          Shipped Apps
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
+          {shippedApps.map((app, index) => (
+            <AppCard key={app.id} app={app} index={index} />
+          ))}
+        </div>
+
+        {/* GitHub repositories */}
+        <div className="flex items-end justify-between gap-4 flex-wrap mb-6">
+          <h3 className="text-[11px] font-bold tracking-[0.3em] uppercase text-white/50">
+            Repositories
+          </h3>
+          <a
+            href="https://github.com/MidhileshRaj"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/30 hover:text-white/70 transition-colors flex items-center gap-2"
+          >
+            All on GitHub <span>→</span>
+          </a>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {portfolioItems.map((item, index) => (
             <PortfolioCard key={item.id} item={item} index={index} />
