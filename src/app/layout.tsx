@@ -17,10 +17,11 @@ const arimo = Arimo({
 });
 
 export const metadata: Metadata = {
-  title: "Midhilesh Raj — Software Developer",
+  title: "Midhilesh Raj — Mobile Application Developer",
   description:
-    "Portfolio of Midhilesh Raj, a Software Developer specialised in Flutter, located in Kerala, India.",
-  keywords: "flutter, software developer, mobile app, dart, python, kerala",
+    "Portfolio of Midhilesh Raj, a Mobile Application Developer and Flutter Developer with 4.5+ years of experience shipping Android and iOS apps, located in Kerala, India.",
+  keywords:
+    "flutter, mobile app developer, android, ios, dart, python, firebase, kerala",
 };
 
 export default function RootLayout({

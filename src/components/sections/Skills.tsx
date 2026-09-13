@@ -5,78 +5,66 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import { useMouseSpotlight } from "@/hooks/useMouseSpotlight";
 
-const skills = [
-  { label: "Flutter", percentage: 93 },
-  { label: "Django / Flask", percentage: 80 },
-  { label: "HTML / CSS", percentage: 90 },
-  { label: "UI Design", percentage: 100 },
-  { label: "AI Prompting", percentage: 95 },
-  { label: "Operations/Aws server / DBMS", percentage: 60 },
+const skillGroups = [
+  { label: "Languages", skills: ["Dart", "Python", "JavaScript", "Java (Android)"] },
+  {
+    label: "Mobile Development",
+    skills: ["Flutter", "Android", "iOS", "Cross-Platform", "App Store Connect", "Google Play Console"],
+  },
+  {
+    label: "State Management & Architecture",
+    skills: ["BLoC / Cubit", "Riverpod", "GetX", "Provider", "Stacked (MVVM)", "MVC"],
+  },
+  { label: "Backend & APIs", skills: ["Django", "Flask", "Spring Boot", "REST APIs", "Webhooks"] },
+  { label: "Frontend", skills: ["HTML", "CSS", "JavaScript", "Bootstrap", "React"] },
+  {
+    label: "Databases",
+    skills: ["MySQL", "PostgreSQL", "Cloud Firestore", "SQLite", "Hive", "Redis"],
+  },
+  { label: "Payment Gateways", skills: ["Cashfree (Easy Split, webhooks)", "Stripe"] },
+  {
+    label: "Cloud & Services",
+    skills: ["Firebase Auth", "Firestore", "Cloud Messaging", "Firebase Storage", "AWS S3", "CloudFront"],
+  },
+  { label: "Tools", skills: ["Git", "GitHub", "Postman", "Figma"] },
+  {
+    label: "Practices",
+    skills: ["Agile", "CI/CD", "Code Review", "QA Coordination", "Regression Testing", "DSA"],
+  },
 ];
 
-function SkillBar({
-  skill,
+function SkillGroup({
+  group,
   index,
 }: {
-  skill: (typeof skills)[0];
+  group: (typeof skillGroups)[0];
   index: number;
 }) {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.4 });
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, x: -30 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-      className="group"
+      transition={{ duration: 0.6, delay: (index % 4) * 0.08, ease: "easeOut" }}
+      className="flex flex-col sm:flex-row sm:items-baseline gap-3 sm:gap-6 pb-6 border-b border-white/6"
     >
-      {/* Label row */}
-      <div className="flex items-baseline justify-between mb-3">
-        <span className="text-white text-sm font-semibold tracking-wide">
-          {skill.label}
-        </span>
-        <motion.span
-          className="text-xs font-bold tabular-nums"
-          style={{ color: "#ffeb12" }}
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: index * 0.1 + 0.8 }}
-        >
-          {skill.percentage}%
-        </motion.span>
-      </div>
-
-      {/* Track */}
-      <div className="h-px bg-white/10 relative">
-        {/* Fill */}
-        <motion.div
-          className="absolute top-0 left-0 h-full"
-          style={{ backgroundColor: "#ffeb12" }}
-          initial={{ width: 0 }}
-          animate={inView ? { width: `${skill.percentage}%` } : {}}
-          transition={{
-            duration: 1.4,
-            delay: index * 0.1 + 0.3,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-        />
-        {/* Glow dot at fill end */}
-        <motion.div
-          className="absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full"
-          style={{ backgroundColor: "#ffeb12", boxShadow: "0 0 6px #ffeb12" }}
-          initial={{ left: 0, opacity: 0 }}
-          animate={
-            inView
-              ? { left: `${skill.percentage}%`, opacity: 1 }
-              : {}
-          }
-          transition={{
-            duration: 1.4,
-            delay: index * 0.1 + 0.3,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-        />
+      <span
+        className="sm:w-48 flex-shrink-0 text-[10px] font-bold tracking-[0.2em] uppercase"
+        style={{ color: "#ffeb12" }}
+      >
+        {group.label}
+      </span>
+      <div className="flex flex-wrap gap-2">
+        {group.skills.map((skill) => (
+          <span
+            key={skill}
+            className="text-xs text-white/75 px-3 py-1.5 border border-white/10 rounded-full"
+          >
+            {skill}
+          </span>
+        ))}
       </div>
     </motion.div>
   );
@@ -113,7 +101,7 @@ export default function Skills() {
           {/* Left — heading */}
           <motion.div
             ref={ref}
-            className="lg:w-5/12"
+            className="lg:w-4/12"
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
@@ -136,15 +124,15 @@ export default function Skills() {
               />
             </div>
             <p className="text-white/40 text-sm font-light leading-relaxed max-w-xs">
-              A diverse set of technical skills built over years of hands-on
-              development across mobile, web, and backend platforms.
+              4.5+ years of shipping production Flutter apps across Android and
+              iOS, backed by hands-on Python and backend development.
             </p>
           </motion.div>
 
-          {/* Right — skill bars */}
-          <div className="lg:w-7/12 w-full flex flex-col gap-8 pt-2">
-            {skills.map((skill, index) => (
-              <SkillBar key={skill.label} skill={skill} index={index} />
+          {/* Right — skill groups */}
+          <div className="lg:w-8/12 w-full flex flex-col gap-6 pt-2">
+            {skillGroups.map((group, index) => (
+              <SkillGroup key={group.label} group={group} index={index} />
             ))}
           </div>
         </div>

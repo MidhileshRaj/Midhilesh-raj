@@ -6,38 +6,108 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import { useMouseSpotlight } from "@/hooks/useMouseSpotlight";
 
-const experiences = [
+type ExperienceEntry = {
+  id: number;
+  company: string;
+  role: string;
+  logo?: string;
+  period: string;
+  location: string;
+  points: string[];
+};
+
+const experiences: ExperienceEntry[] = [
   {
     id: 1,
     company: "Occazone Pvt. Ltd.",
-    role: "Sr. Flutter Developer",
+    role: "Mobile App Development Lead",
     logo: "/occazone_img.jpg",
-    period: "October 2025 — Current",
-    location: "Thiruvananthapuram",
-    quote:
-      "Served as a Senior Software Development Engineer, leading a team of 5 developers in building and managing the WhenYou Event App. Directed cross-platform development (iOS and Android), ensuring efficient team collaboration, timely delivery, and high-quality application performance",
+    period: "October 2025 — Present",
+    location: "Kerala",
+    points: [
+      "Lead mobile application development for Occazone, a product-based multi-vendor events marketplace connecting customers with convention halls, party halls, photographers, makeover studios, caterers and transportation vendors across Kerala.",
+      "Own the Flutter application end to end — architecture, feature development and release management — and drive App Store and Google Play submissions through review to launch.",
+      "Integrated Cashfree Easy Split payments with a split-after-success settlement flow and webhook-driven booking confirmation to handle multi-vendor orders.",
+      "Implemented Firebase Cloud Messaging with semantic notification routing so users receive timely booking and payment updates.",
+      "Partner with founders and cross-functional teams on product-domain discussions and roadmap planning, translating business goals into technical requirements and prioritised delivery.",
+      "Collaborate with backend (Spring Boot, PostgreSQL, Redis) and web (React) teams to keep mobile, API and web releases aligned, and coordinate QA and defect triage ahead of each release.",
+    ],
   },
   {
     id: 2,
-    company: "Futura Labs",
-    role: "Mobile & Web Developer",
-    logo: "/futura_logo_1.jpg",
-    period: "June 2023 — Present",
-    location: "Kozhikode",
-    quote:
-      "As a mobile and web app developer, I've excelled in creating Dart APIs using the Shelf package and harnessing Firebase for authentication and data storage. Recognised as the best performer of the month, I've also mentored interns, advocated for best practices, and developed Flutter applications with efficient state management using GetX and Provider.",
+    company: "Ecochoice Naturals Pvt. Ltd.",
+    role: "Software Developer (Flutter & Python)",
+    period: "October 2024 — September 2025",
+    location: "Kerala",
+    points: [
+      "Maintained and optimised a production Agri-Tech Flutter application, integrating backend enhancements and resolving over 90% of user-reported bugs.",
+      "Managed and deployed backend server updates, API endpoints and environment configurations, reducing downtime by ~30% and speeding up feature rollout.",
+      "Led end-to-end development across mobile and backend architecture, ensuring seamless integration, performance tuning and high availability of critical systems.",
+      "Improved AI/ML model performance by ~25% by labelling farm-produce image datasets (millet, rice, wheat) and streamlining dataset accuracy.",
+      "Supported AI model integration across training-data pipelines and deployment, improving automation in quality-grading workflows.",
+      "Coordinated QA checks and regression testing each release cycle to keep the application stable and reliable.",
+    ],
   },
   {
     id: 3,
-    company: "Rizz Technologies",
-    role: "Flutter & Python Developer",
+    company: "Futura Labs",
+    role: "Flutter Developer",
+    logo: "/futura_logo_1.jpg",
+    period: "June 2023 — October 2024",
+    location: "Kozhikode",
+    points: [
+      "Built and shipped multiple Flutter applications, optimising state management with GetX and Provider to improve performance by ~40% and reduce bugs.",
+      "Integrated Firebase Authentication and Cloud Firestore for authentication, storage and notifications, cutting login times by ~50% and lifting user engagement.",
+      "Mentored 15+ interns through agile practices and code reviews, contributing to a strong intern-to-full-time conversion rate.",
+      "Ran code reviews and introduced best practices, improving code quality by ~20% and reducing technical debt across projects.",
+      "Recognised as Best Performer of the Month.",
+    ],
+  },
+  {
+    id: 4,
+    company: "RISS Technologies",
+    role: "Associate Software Developer",
     logo: "/rizz_logo_1.jpg",
     period: "May 2022 — June 2023",
     location: "Kozhikode",
-    quote:
-      "With a versatile skill set encompassing Python and Flutter development, I've not only contributed to diverse projects but also mentored numerous interns and junior colleagues. Additionally, I've played a pivotal role in developing various private academic projects, utilising my expertise in Flutter and Python to drive innovation and success.",
+    points: [
+      "Developed mobile applications using Flutter and native Android.",
+      "Built responsive front-ends for 5+ projects using HTML, CSS, JavaScript and Bootstrap.",
+      "Designed and maintained MySQL databases with optimised schemas via ORM, integrated with Django — improving data-retrieval efficiency by ~35% and cutting query execution time by ~20%.",
+      "Led a process re-engineering effort that consolidated end-to-end service workflows and reduced paperwork by ~75%.",
+    ],
+  },
+  {
+    id: 5,
+    company: "Trylogic Soft Solutions",
+    role: "UI Developer Intern",
+    logo: "/trylogic_logo_2.jpg",
+    period: "February 2022 — May 2022",
+    location: "Kerala",
+    points: [],
   },
 ];
+
+function CompanyLogo({ exp, sizes }: { exp: ExperienceEntry; sizes: string }) {
+  if (exp.logo) {
+    return (
+      <Image src={exp.logo} alt={exp.company} fill sizes={sizes} className="object-contain p-1" />
+    );
+  }
+  const initials = exp.company
+    .split(" ")
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join("");
+  return (
+    <span
+      className="absolute inset-0 flex items-center justify-center text-sm font-extrabold"
+      style={{ backgroundColor: "rgba(255,235,18,0.1)", color: "#ffeb12" }}
+    >
+      {initials}
+    </span>
+  );
+}
 
 export default function Experience() {
   const [active, setActive] = useState(0);
@@ -96,13 +166,7 @@ export default function Experience() {
               >
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 relative rounded flex-shrink-0 overflow-hidden bg-white/5">
-                    <Image
-                      src={exp.logo}
-                      alt={exp.company}
-                      fill
-                      sizes="40px"
-                      className="object-contain p-1"
-                    />
+                    <CompanyLogo exp={exp} sizes="40px" />
                   </div>
                   <div className="text-left">
                     <span
@@ -154,24 +218,31 @@ export default function Experience() {
                   </span>
                 </div>
 
-                <span className="block text-[#ffeb12] text-xl mb-5 tracking-widest">
-                  ••••
-                </span>
+                {experiences[active].points.length > 0 && (
+                  <ul className="flex flex-col gap-3 mb-10">
+                    {experiences[active].points.map((point) => (
+                      <li
+                        key={point}
+                        className="flex gap-3 text-white/60 font-light leading-relaxed text-sm md:text-base"
+                      >
+                        <span
+                          className="mt-2.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
+                          style={{ backgroundColor: "#ffeb12" }}
+                        />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
-                <blockquote className="text-white/60 font-light leading-relaxed text-sm md:text-base mb-10">
-                  {experiences[active].quote}
-                </blockquote>
-
-                {/* Author row */}
+                {/* Company row */}
                 <div className="flex items-center gap-5 pt-6 border-t border-white/6">
-                  <div className="w-14 h-14 relative rounded overflow-hidden bg-white flex-shrink-0">
-                    <Image
-                      src={experiences[active].logo}
-                      alt={experiences[active].company}
-                      fill
-                      sizes="56px"
-                      className="object-contain p-1"
-                    />
+                  <div
+                    className={`w-14 h-14 relative rounded overflow-hidden flex-shrink-0 ${
+                      experiences[active].logo ? "bg-white" : ""
+                    }`}
+                  >
+                    <CompanyLogo exp={experiences[active]} sizes="56px" />
                   </div>
                   <div>
                     <h3 className="text-white font-bold">

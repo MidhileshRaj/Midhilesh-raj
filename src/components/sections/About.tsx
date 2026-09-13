@@ -5,14 +5,15 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import { useMouseSpotlight } from "@/hooks/useMouseSpotlight";
+import { RESUME_URL, RESUME_FILENAME } from "@/lib/resume";
 
 const stats = [
-  { value: "4+", label: "Years\nExperience" },
-  { value: "3+", label: "CI/CD Projects\nCompleted" },
-  { value: "3", label: "Companies\nWorked With" },
+  { value: "4.5+", label: "Years\nExperience" },
+  { value: "5", label: "Production Apps\nShipped" },
+  { value: "5", label: "Companies\nWorked With" },
   { value: "10+", label: "Freelance\n Works" },
   { value: "20+", label: "Total\n Projects (including personal)" },
-  { value: "10+", label: "Interns\n Trained" },
+  { value: "15+", label: "Interns\n Mentored" },
 ];
 
 export default function About() {
@@ -127,15 +128,22 @@ export default function About() {
               We can make it together
             </h3>
             <p className="text-base text-white/60 font-light leading-relaxed mb-4">
-              Passionate about coding 🧑‍💻, ECE background{" "}
-              <a href="#" style={{ color: "#ffeb12" }} className="hover:opacity-80 transition-opacity">
-                IT professional
-              </a>{" "}
-              here.
+              Mobile Application Developer with{" "}
+              <span style={{ color: "#ffeb12" }}>4.5+ years</span> of experience
+              designing, building and shipping production Flutter apps across
+              Android and iOS, backed by hands-on Python and backend development.
+            </p>
+            <p className="text-white/50 font-light leading-relaxed mb-4 text-sm">
+              Currently Mobile App Development Lead at Occazone, a product-based
+              multi-vendor events marketplace — owning the app end to end, from
+              architecture and product planning through App Store and Google Play
+              release.
             </p>
             <p className="text-white/50 font-light leading-relaxed mb-10 text-sm">
-              {`I'm a tech-enthusiast & have a wide variety of knowledge in programming and computer. 💻
-              Experience in a variety of coding skills including Flutter and Python.`}
+              Experienced across Flutter, Dart, REST APIs, Firebase, state
+              management and SQL/NoSQL databases, with a consistent record of
+              turning product requirements into reliable, well-tested releases.
+              B.Tech in Electronics &amp; Communication Engineering.
             </p>
 
             {/* Stats row */}
@@ -162,9 +170,8 @@ export default function About() {
             </div>
 
             <motion.a
-              href="https://drive.google.com/file/d/1K6b5OkTIB8QY3aQuMOq_P7QF5n9jkY1a/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={RESUME_URL}
+              download={RESUME_FILENAME}
               className="inline-flex items-center gap-3 self-start border border-white/20 text-[11px] font-extrabold uppercase tracking-[0.2em] px-8 py-4 rounded-full transition-all hover:border-[#ffeb12]/60 hover:scale-105 active:scale-95"
               style={{ color: "#ffeb12" }}
               whileHover={{ borderColor: "rgba(255,235,18,0.5)" }}

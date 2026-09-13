@@ -26,8 +26,8 @@ const shippedApps: ShippedApp[] = [
     client: "Occazone Pvt. Ltd.",
     category: "Event Services Marketplace",
     description:
-      "Customer app for discovering and booking event services across Kerala — convention centres, party halls, catering, photography, makeover studios and tours & travels — with verified vendors and live booking updates. Led a team of 5 developers shipping it on Android and iOS.",
-    tech: ["Flutter", "Android", "iOS"],
+      "Event booking and planning platform where users self-book event services end to end — convention halls, caterers, photographers, makeover studios and transport — with an integrated direct payment gateway. Built the complete app architecture and production app single-handedly, including Cashfree Easy Split multi-vendor payments and Firebase Cloud Messaging for booking updates.",
+    tech: ["Flutter", "Cashfree", "FCM", "Android", "iOS"],
     icon: "/projects/occazone.png",
     links: [
       { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.occazone.whenyou" },
@@ -38,11 +38,11 @@ const shippedApps: ShippedApp[] = [
   {
     id: 2,
     num: "02",
-    title: "Occazone Driver",
+    title: "Occazone Drive",
     client: "Occazone Pvt. Ltd.",
     category: "Driver Trip Management",
     description:
-      "Companion app for drivers assigned by vendors on the Occazone platform. Drivers receive vendor-assigned trips, start and complete rides with secure customer Start/End codes, manage trip status and track their trip history and earnings.",
+      "Companion driver app for Occazone's Tours & Travels package-booking module. A lightweight app that lets registered drivers update trip status in real time — starting and ending rides with secure customer codes — keeping both customers and vendors informed.",
     tech: ["Flutter", "Android"],
     icon: "/projects/occazone-driver.jpg",
     links: [
@@ -53,10 +53,10 @@ const shippedApps: ShippedApp[] = [
     id: 3,
     num: "03",
     title: "JoinMeds",
-    client: "JoinMeds",
+    client: "Freelance · Medland",
     category: "Healthcare Job Platform",
     description:
-      "India's dedicated healthcare job platform. Doctors, nurses, pharmacists and technicians build role-specific profiles, upload resumes and apply instantly, while hospitals and clinics post openings, review applicants and hire faster.",
+      "Job-finding app built exclusively for the medical field, supporting both personal and public job search. Healthcare professionals build profiles and apply to roles, while hospitals and clinics post openings and hire faster. Live on the App Store and Google Play.",
     tech: ["Flutter", "Android", "iOS"],
     icon: "/projects/joinmeds.png",
     links: [
@@ -70,10 +70,10 @@ const shippedApps: ShippedApp[] = [
     num: "04",
     title: "Raitha Sahayak",
     client: "Ecochoice Naturals Pvt. Ltd.",
-    category: "AgriTech · Farmers",
+    category: "AI Farm-Produce Quality Checking",
     description:
-      "Farmer-facing app powered by a trained AI model. Farmers upload photos of their produce and receive AI-generated quality reports, helping them showcase their produce to buyers and sell with confidence.",
-    tech: ["Flutter", "AI", "Android"],
+      "Marketplace connecting farmers and buyers with AI-based quality assurance — capturing images and details of produce to generate AI quality reports. Owned overall app functionality, plus ML model training support, image labelling, website updates and server-side work.",
+    tech: ["Flutter", "Python", "AI / ML", "Android"],
     icon: "/projects/raitha-sahayak.png",
     links: [
       { label: "Google Play", url: "https://play.google.com/store/apps/details?id=in.ecochoice.raithasahayak" },
@@ -84,10 +84,10 @@ const shippedApps: ShippedApp[] = [
     num: "05",
     title: "Krishi Connect",
     client: "Ecochoice Naturals Pvt. Ltd.",
-    category: "AgriTech · B2B Buyers",
+    category: "B2B Farmer-Buyer Marketplace",
     description:
-      "Buyer-side B2B companion to Raitha Sahayak. Connects buyers directly with farmers and gives them AI-verified quality reports on produce for transparent, informed purchasing.",
-    tech: ["Flutter", "AI", "Android"],
+      "B2B platform connecting buyers directly with farmers. Integrated Firebase Authentication and cloud photo retrieval for AI batch results, using Provider for state management — reducing complaints and boosting engagement by ~30%.",
+    tech: ["Flutter", "Firebase", "Provider", "Android"],
     links: [],
   },
 ];

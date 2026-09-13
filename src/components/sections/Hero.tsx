@@ -3,10 +3,11 @@
 import { useRef, Suspense, lazy, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { RESUME_URL, RESUME_FILENAME } from "@/lib/resume";
 
 const HeroCanvas = lazy(() => import("@/components/canvas/HeroCanvas"));
 
-const roles = ["Flutter Developer", "Web Developer", "Python Developer"];
+const roles = ["Flutter Developer", "Mobile App Lead", "Python Developer"];
 
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/MidhileshRaj" },
@@ -82,7 +83,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          Portfolio — Software Developer
+          Portfolio — Mobile Application Developer
         </motion.p>
 
         {/* Main heading */}
@@ -142,9 +143,8 @@ export default function Hero() {
             View My Work
           </a>
           <a
-            href="https://drive.google.com/file/d/1K6b5OkTIB8QY3aQuMOq_P7QF5n9jkY1a/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={RESUME_URL}
+            download={RESUME_FILENAME}
             className="px-8 py-3.5 border border-white/25 text-white font-extrabold text-[11px] tracking-[0.2em] uppercase rounded-full hover:border-white hover:scale-105 active:scale-95 transition-all"
           >
             Download CV
