@@ -83,7 +83,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          Portfolio — Mobile Application Developer
+          Flutter Developer · Software Engineer · Kerala, India
         </motion.p>
 
         {/* Main heading */}
@@ -93,7 +93,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          Midhilesh
+          {/* the space keeps "Midhilesh Raj" as two words for search engines */}
+          Midhilesh{" "}
           <br />
           <span className="text-white/40">Raj</span>
         </motion.h1>

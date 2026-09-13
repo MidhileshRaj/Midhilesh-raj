@@ -125,11 +125,11 @@ export default function About() {
             transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-snug">
-              We can make it together
+              Experienced Software Engineer &amp; Flutter Developer in Kerala
             </h3>
             <p className="text-base text-white/60 font-light leading-relaxed mb-4">
-              Mobile Application Developer with{" "}
-              <span style={{ color: "#ffeb12" }}>4.5+ years</span> of experience
+              I&apos;m Midhilesh Raj, a Mobile Application Developer with{" "}
+              <span style={{ color: "#ffeb12" }}>4+ years</span> of experience
               designing, building and shipping production Flutter apps across
               Android and iOS, backed by hands-on Python and backend development.
             </p>

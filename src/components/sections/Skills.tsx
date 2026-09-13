@@ -124,7 +124,7 @@ export default function Skills() {
               />
             </div>
             <p className="text-white/40 text-sm font-light leading-relaxed max-w-xs">
-              4.5+ years of shipping production Flutter apps across Android and
+              4+ years of shipping production Flutter apps across Android and
               iOS, backed by hands-on Python and backend development.
             </p>
           </motion.div>

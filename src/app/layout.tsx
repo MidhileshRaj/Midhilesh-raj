@@ -1,6 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Raleway, Arimo } from "next/font/google";
 import "./globals.css";
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+} from "@/lib/site";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -17,11 +24,44 @@ const arimo = Arimo({
 });
 
 export const metadata: Metadata = {
-  title: "Midhilesh Raj — Mobile Application Developer",
-  description:
-    "Portfolio of Midhilesh Raj, a Mobile Application Developer and Flutter Developer with 4.5+ years of experience shipping Android and iOS apps, located in Kerala, India.",
-  keywords:
-    "flutter, mobile app developer, android, ios, dart, python, firebase, kerala",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  creator: SITE_NAME,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "profile",
+    firstName: "Midhilesh",
+    lastName: "Raj",
+    url: "/",
+    siteName: SITE_NAME,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    creator: "@MidhileshRaj",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
 };
 
 export default function RootLayout({
