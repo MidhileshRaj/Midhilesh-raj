@@ -48,6 +48,9 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     creator: "@MidhileshRaj",
   },
+  verification: {
+    google: "l5xDMmyjia11wqYo1je2hC8J_M8VV9gsuA3CqmS8d0Y",
+  },
   robots: {
     index: true,
     follow: true,
