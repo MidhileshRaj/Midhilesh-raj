@@ -267,7 +267,7 @@ export default function Contact() {
                   Phone
                 </span>
                 <a
-                  href="tel:+918848664147"
+                  href="tel:+9188*******"
                   className="text-white hover:text-[#ffeb12] transition-colors"
                 >
                   +91 884 8664147
