@@ -8,9 +8,9 @@ import { useMouseSpotlight } from "@/hooks/useMouseSpotlight";
 import { RESUME_URL, RESUME_FILENAME } from "@/lib/resume";
 
 const stats = [
-  { value: "4.5+", label: "Years\nExperience" },
+  { value: "4+", label: "Years\nExperience" },
   { value: "5", label: "Production Apps\nShipped" },
-  { value: "5", label: "Companies\nWorked With" },
+  { value: "3", label: "Companies\nWorked With" },
   { value: "10+", label: "Freelance\n Works" },
   { value: "20+", label: "Total\n Projects (including personal)" },
   { value: "15+", label: "Interns\n Mentored" },
